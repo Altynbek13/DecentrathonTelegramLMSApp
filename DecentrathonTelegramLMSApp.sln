@@ -3,19 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecentrathonTelegramLMSApp", "DecentrathonTelegramLMSApp\DecentrathonTelegramLMSApp.csproj", "{BCB1E627-E163-4A6A-98C2-243511BA69B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecentrathonTelegramLMSApp", "DecentrathonTelegramLMSApp\DecentrathonTelegramLMSApp.csproj", "{BCB1E627-E163-4A6A-98C2-243511BA69B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B9C321E-109F-4F36-8D7D-62F4388B956E} = {7B9C321E-109F-4F36-8D7D-62F4388B956E}
+		{EB152415-1377-4688-A7B1-F5AC04B739BD} = {EB152415-1377-4688-A7B1-F5AC04B739BD}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{7B9C321E-109F-4F36-8D7D-62F4388B956E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EB152415-1377-4688-A7B1-F5AC04B739BD} = {EB152415-1377-4688-A7B1-F5AC04B739BD}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{7B9C321E-109F-4F36-8D7D-62F4388B956E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EB152415-1377-4688-A7B1-F5AC04B739BD} = {EB152415-1377-4688-A7B1-F5AC04B739BD}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{EB152415-1377-4688-A7B1-F5AC04B739BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{EB152415-1377-4688-A7B1-F5AC04B739BD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7} = {2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}
 	EndProjectSection

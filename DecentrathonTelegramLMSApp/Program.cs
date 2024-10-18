@@ -1,4 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Persistence;
+using Telegram.Bot;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("Local");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseLazyLoadingProxies().UseSqlServer(connectionString);
+});
+builder.Services.AddSingleton<ITelegramBotClient>(new TelegramBotClient("7480761268:AAFKZh7pLFJ6DMcXmfwf_hcxKgDDICS2COg"));
 
 // Add services to the container.
 
