@@ -16,5 +16,6 @@ namespace Domain.Entities
         public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<Quest> Quests { get; set; }
         public virtual ICollection<TokenTransaction> TokenTransaction { get; set; }
+        public virtual ICollection<Quiz> Quizzes { get; set; }
     }
 }
