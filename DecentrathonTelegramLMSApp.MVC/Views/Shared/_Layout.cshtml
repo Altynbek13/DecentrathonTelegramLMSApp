@@ -9,37 +9,46 @@
     <link rel="stylesheet" href="~/DecentrathonTelegramLMSApp.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DecentrathonTelegramLMSApp.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - DecentrathonTelegramLMSApp.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer class="app-footer">
+        <nav class="navigation">
+            <a class="nav-button" asp-controller="Home" asp-action="Index">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20px" height="20px">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+                Главная
+            </a>
+            <a class="nav-button" asp-controller="Home" asp-action="Lider">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20px" height="20px">
+                    <path d="M12 2L15.09 8.26 22 9.27l-5 4.87L17.91 21 12 17.77 6.09 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                </svg>
+                Таблица лидеров
+            </a>
+            <a class="nav-button" asp-controller="Home" asp-action="Courses">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20px" height="20px">
+                    <path d="M13 2.05V4.07c3.39.49 6 3.39 6 6.93 0 3.53-2.61 6.43-6 6.92v2.02c4.95-.5 9-4.77 9-8.94 0-4.16-4.05-8.44-9-8.94zM11 22v-2.03c-3.39-.49-6-3.39-6-6.92 0-3.53 2.61-6.43 6-6.93V2.05c-4.95.5-9 4.78-9 8.94 0 4.17 4.05 8.44 9 8.94z" />
+                </svg>
+                Курсы
+            </a>
+            <a class="nav-button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20px" height="20px">
+                    <path d="M12 7V3L1 9v2h11V7zm0 2H3v9l9-5V9zm11-5l-9 5v5l9-5V4zm-1 2v9h-9v-5h9z" />
+                </svg>
+                Задания
+            </a>
+            <a class="nav-button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20px" height="20px">
+                    <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm2 10h14V5H5v14zM5 3h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zm12 6h2V7h-2v2zm0 4h2v-2h-2v2zm0 4h2v-2h-2v2zm-8 0h8v-2H9v2zm0-4h8v-2H9v2zm0-4h8V7H9v2z" />
+                </svg>
+                Профиль
+            </a>
+        </nav>
+        <p class="terms">Правила и условия</p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
