@@ -1,4 +1,6 @@
 using Application;
+using Application.Models;
+using AutoMapper;
 using Persistence;
 using Persistence.Mocks;
 using Telegram.Bot;
@@ -15,6 +17,8 @@ builder.Services.AddSingleton<ITelegramBotClient>(new TelegramBotClient("8027671
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddSingleton<CourseMockRepository>();
+builder.Services.AddSingleton<UserMockRepository>();
+builder.Services.AddAutoMapper(typeof(GlobalMapping));
 
 var app = builder.Build();
 

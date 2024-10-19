@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Persistence.Mocks
+
+@inject CourseMockRepository rep
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,83 +13,91 @@
     <div class="test-container">
         <h2>Тест: Основы программирования</h2>
 
-        <!-- Вопросы теста -->
-        <div class="question">
-            <h3>Вопрос 1: Что такое переменная?</h3>
-            <form>
-                <label>
-                    <input type="radio" name="q1" value="a"> Это постоянное значение
-                </label><br>
-                <label>
-                    <input type="radio" name="q1" value="b"> Это контейнер для хранения данных
-                </label><br>
-                <label>
-                    <input type="radio" name="q1" value="c"> Это функция, выполняющая код
-                </label><br>
-            </form>
-        </div>
+        @foreach (var course in rep.Courses)
+        {
+            <h3>Курс: @course.Title</h3>
 
-        <div class="question">
-            <h3>Вопрос 2: Какой тип данных используется для хранения текста?</h3>
-            <form>
-                <label>
-                    <input type="radio" name="q2" value="a"> int
-                </label><br>
-                <label>
-                    <input type="radio" name="q2" value="b"> boolean
-                </label><br>
-                <label>
-                    <input type="radio" name="q2" value="c"> string
-                </label><br>
-            </form>
-        </div>
+            foreach (var module in course.Modules)
+            {
+                <h4>Модуль: @module.Title</h4>
 
-        <div class="question">
-            <h3>Вопрос 3: Какой оператор используется для сравнения значений?</h3>
-            <form>
-                <label>
-                    <input type="radio" name="q3" value="a"> =
-                </label><br>
-                <label>
-                    <input type="radio" name="q3" value="b"> ==
-                </label><br>
-                <label>
-                    <input type="radio" name="q3" value="c"> !=
-                </label><br>
-            </form>
-        </div>
+                foreach (var test in module.Tests)
+                {
+                    <h5>Тест: @test.Title</h5>
+
+                    @foreach (var question in test.Questions)
+                    {
+                        <div class="question">
+                            <h3>@question.Text</h3>
+
+                            @for (int i = 0; i < question.Answers.Count; i++)
+                            {
+                                var answer = question.Answers[i];
+                                <label>
+                                    <input type="radio" name="q_@question.Id" value="@answer" required> @answer
+                                </label>
+                                <br />
+                            }
+                        </div>
+                    }
+                }
+            }
+        }
 
         <button class="submit-button" onclick="submitTest()">Отправить тест</button>
     </div>
 
     <!-- Модальное окно с результатом -->
-    <div class="modal" id="resultModal">
+    <div class="modal" id="resultModal" style="display: none;">
         <div class="modal-content">
             <span class="close-button" onclick="closeModal()">&times;</span>
             <h3>Результаты теста</h3>
-            <p id="testResult">Ваш результат: 0 из 3 правильных ответов.</p>
+            <p id="testResult">Ваш результат: 0 правильных ответов.</p>
         </div>
     </div>
 
     <script>
         function submitTest() {
             let score = 0;
-            // Проверка ответов
-            const answers = {
-                q1: 'b',
-                q2: 'c',
-                q3: 'b'
+
+            
+            const correctAnswers = {
+                1: '11',
+                2: '18',
+                3: '11',
+                4: '18',
+                6: 'int x = 5;',
+                7: 'bool',
+                8: 'Array',
+                9: '4 байта',
+                10: 'Model View Controller',
+                11: 'HttpGet',
+                12: 'Класс для подключения к базе данных',
+                13: '[Key]',
+                14: 'Все вышеперечисленные',
+                15: 'boolean',
+                16: 'Выводит сообщение в консоль',
+                17: 'push()',
+                18: 'Все вышеперечисленные',
+                19: 'parseInt()',
+                20: 'function',
+                21: 'Все вышеперечисленные',
+                22: 'parseInt()',
+                23: 'parseInt()',
+                24: 'parseInt()',
+                25: 'parseInt()',
             };
 
-            for (const [question, correctAnswer] of Object.entries(answers)) {
-                const selected = document.querySelector(`input[name="${question}"]:checked`);
+      
+            for (const [questionId, correctAnswer] of Object.entries(correctAnswers)) {
+                const selected = document.querySelector(`input[name="q_${questionId}"]:checked`);
                 if (selected && selected.value === correctAnswer) {
                     score++;
                 }
             }
 
-            // Показать результат
-            document.getElementById('testResult').textContent = `Ваш результат: ${score} из 3 правильных ответов.`;
+       
+            document.getElementById('testResult').textContent = `Ваш результат: ${score} правильных ответов.`;
             openModal();
         }
 

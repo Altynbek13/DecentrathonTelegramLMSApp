@@ -14,6 +14,7 @@ namespace Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             var assembly = typeof(DependencyInjection).Assembly;
+
             //services.AddScoped<ITestService,TestService>();
             return services;
         }

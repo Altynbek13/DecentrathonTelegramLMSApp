@@ -242,14 +242,14 @@ namespace Persistence.Mocks
                                 {
                                     new Question
                                     {
-                                        Id = 5,
+                                        Id = 10,
                                         Text = "Что означает MVC?",
                                         Answers = new List<string> { "Model View Controller", "Model Value Controller", "Main View Controller", "Model Value Control" },
                                         CorrectAnswer = "Model View Controller"
                                     },
                                     new Question
                                     {
-                                        Id = 6,
+                                        Id = 11,
                                         Text = "Какой метод используется для обработки GET-запросов в ASP.NET?",
                                         Answers = new List<string> { "GET", "Retrieve", "HttpGet", "Fetch" },
                                         CorrectAnswer = "HttpGet"
@@ -266,14 +266,14 @@ namespace Persistence.Mocks
                                 {
                                     new Question
                                     {
-                                        Id = 7,
+                                        Id = 12,
                                         Text = "Что такое DbContext в Entity Framework?",
                                         Answers = new List<string> { "Класс для подключения к базе данных", "Интерфейс для обработки запросов", "Библиотека для работы с HTTP-запросами", "Метод для выполнения миграций" },
                                         CorrectAnswer = "Класс для подключения к базе данных"
                                     },
                                     new Question
                                     {
-                                        Id = 8,
+                                        Id = 13,
                                         Text = "Какой атрибут используется для указания ключа в модели?",
                                         Answers = new List<string> { "[Key]", "[Primary]", "[Identity]", "[Unique]" },
                                         CorrectAnswer = "[Key]"
@@ -426,14 +426,14 @@ namespace Persistence.Mocks
                                 {
                                     new Question
                                     {
-                                        Id = 13,
+                                        Id = 14,
                                         Text = "Какой ключевое слово используется для объявления переменной в JavaScript?",
                                         Answers = new List<string> { "var", "let", "const", "Все вышеперечисленные" },
                                         CorrectAnswer = "Все вышеперечисленные"
                                     },
                                     new Question
                                     {
-                                        Id = 14,
+                                        Id = 15,
                                         Text = "Какой тип данных представляет значение true или false?",
                                         Answers = new List<string> { "number", "string", "boolean", "object" },
                                         CorrectAnswer = "boolean"
@@ -450,14 +450,14 @@ namespace Persistence.Mocks
                                 {
                                     new Question
                                     {
-                                        Id = 15,
+                                        Id = 16,
                                         Text = "Что делает функция 'console.log()'?",
                                         Answers = new List<string> { "Выводит сообщение в консоль", "Создает новую переменную", "Открывает новое окно", "Запускает другой скрипт" },
                                         CorrectAnswer = "Выводит сообщение в консоль"
                                     },
                                     new Question
                                     {
-                                        Id = 16,
+                                        Id = 17,
                                         Text = "Какой метод используется для добавления элемента в конец массива?",
                                         Answers = new List<string> { "push()", "add()", "insert()", "append()" },
                                         CorrectAnswer = "push()"
@@ -523,14 +523,14 @@ namespace Persistence.Mocks
                         {
                             new Question
                             {
-                                Id = 17,
+                                Id = 18,
                                 Text = "Какой оператор используется для сравнения двух значений?",
                                 Answers = new List<string> { "=", "==", "===", "Все вышеперечисленные" },
                                 CorrectAnswer = "Все вышеперечисленные"
                             },
                             new Question
                             {
-                                Id = 18,
+                                Id = 19,
                                 Text = "Какой метод используется для преобразования строки в число?",
                                 Answers = new List<string> { "parseInt()", "toString()", "Number()", "parseFloat()" },
                                 CorrectAnswer = "parseInt()"
@@ -547,14 +547,14 @@ namespace Persistence.Mocks
                         {
                             new Question
                             {
-                                Id = 19,
+                                Id = 20,
                                 Text = "Какой ключевое слово используется для объявления функции?",
                                 Answers = new List<string> { "function", "func", "declare", "define" },
                                 CorrectAnswer = "function"
                             },
                             new Question
                             {
-                                Id = 20,
+                                Id = 21,
                                 Text = "Что такое стрелочная функция в JavaScript?",
                                 Answers = new List<string> { "Функция без имени", "Функция, возвращающая значение", "Упрощенный синтаксис функции", "Все вышеперечисленные" },
                                 CorrectAnswer = "Все вышеперечисленные"
@@ -610,14 +610,14 @@ namespace Persistence.Mocks
                                 {
                                     new Question
                                     {
-                                        Id = 21,
+                                        Id = 22,
                                         Text = "Какой тип данных используется для хранения текстовых значений в Python?",
                                         Answers = new List<string> { "int", "str", "float", "bool" },
                                         CorrectAnswer = "str"
                                     },
                                     new Question
                                     {
-                                        Id = 22,
+                                        Id = 23,
                                         Text = "Какой оператор используется для проверки равенства в Python?",
                                         Answers = new List<string> { "=", "==", "!=", "all of the above" },
                                         CorrectAnswer = "=="

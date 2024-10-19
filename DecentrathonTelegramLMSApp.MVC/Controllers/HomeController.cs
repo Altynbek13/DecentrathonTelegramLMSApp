@@ -1,4 +1,7 @@
+using Application.Models;
+using AutoMapper;
 using DecentrathonTelegramLMSApp.MVC.Models;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Mocks;
 using System.Diagnostics;
@@ -11,10 +14,14 @@ namespace DecentrathonTelegramLMSApp.MVC.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserMockRepository _userMockRepository;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ITelegramBotClient _telegramBotClient;
+        private readonly IMapper _mapper;
+        public HomeController(ILogger<HomeController> logger, UserMockRepository userMockRepository, ITelegramBotClient telegramBotClient, IMapper mapper)
         {
             _logger = logger;
+            _userMockRepository = userMockRepository;
+            _telegramBotClient = telegramBotClient;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
@@ -53,11 +60,14 @@ namespace DecentrathonTelegramLMSApp.MVC.Controllers
         {
             return View();
         }
-        
-        public IActionResult Profile(ITelegramBotClient telegramBotClient)
+
+        public async Task<IActionResult> Profile()
         {
-            var user = _userMockRepository.Users.FirstOrDefault(u => u.Username  == telegramBotClient.GetMyNameAsync().Result.Name);
-            return View();
+            
+            var myName = (await _telegramBotClient.GetMeAsync()).Username;
+            var user = _userMockRepository.Users.FirstOrDefault(u => u.Username == myName);
+            var userViewModel = _mapper.Map<Domain.Entities.User,UserViewModel>(user);
+            return View(userViewModel);
         }
 
         public IActionResult Privacy()
