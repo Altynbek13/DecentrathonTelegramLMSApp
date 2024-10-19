@@ -13,6 +13,7 @@ namespace Persistence.Mocks
                 Id = 1,
                 Title = "Основы C#",
                 Description = "Изучите основы C#",
+                ImgPath = "/images/Основы CSharp.png",
                 TokenReward = 50,
                 Modules = new List<Module>
                 {
@@ -200,6 +201,7 @@ namespace Persistence.Mocks
                 Id = 2,
                 Title = "Основы ASP.NET",
                 Description = "Изучите основы создания веб-приложений с использованием ASP.NET",
+                ImgPath = "/images/Основы ASP.NET.png",
                 TokenReward = 70,
                 Modules = new List<Module>
                 {
@@ -383,6 +385,7 @@ namespace Persistence.Mocks
                 Id = 3,
                 Title = "Основы JavaScript",
                 Description = "Изучите основы программирования на JavaScript",
+                ImgPath = "/images/Основы JavaScript.png",
                 TokenReward = 60,
                 Modules = new List<Module>
                 {
@@ -566,6 +569,7 @@ namespace Persistence.Mocks
                 Id = 4,
                 Title = "Основы Python",
                 Description = "Изучите основы программирования на Python",
+                ImgPath = "/images/Основы Python.jpg",
                 TokenReward = 70,
                 Modules = new List<Module>
                 {
@@ -749,6 +753,7 @@ namespace Persistence.Mocks
                 Id = 5,
                 Title = "Основы веб-разработки",
                 Description = "Изучите основы веб-разработки с HTML, CSS и JavaScript",
+                ImgPath = "/images/Основы Веб-разработки.jpg",
                 TokenReward = 80,
                 Modules = new List<Module>
                 {

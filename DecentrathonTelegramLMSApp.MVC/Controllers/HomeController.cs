@@ -1,12 +1,16 @@
 using DecentrathonTelegramLMSApp.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Persistence.Mocks;
 using System.Diagnostics;
+using Telegram.Bot;
+using Telegram.Bot.Types;
 
 namespace DecentrathonTelegramLMSApp.MVC.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UserMockRepository _userMockRepository;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -25,10 +29,12 @@ namespace DecentrathonTelegramLMSApp.MVC.Controllers
         {
             return View();
         }
-        public IActionResult Profile()
+        public IActionResult Profile(ITelegramBotClient telegramBotClient)
         {
+            var user = _userMockRepository.Users.FirstOrDefault(u => u.Username  == telegramBotClient.GetMyNameAsync().Result.Name);
             return View();
         }
+
         public IActionResult Privacy()
         {
             return View();

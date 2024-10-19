@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Persistence.Mocks
+@inject CourseMockRepository courseMockRepository
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,46 +11,17 @@
 <body>
     <div class="courses-container">
         <h1>Доступные курсы</h1>
-        <div class="course-item">
-            <img src="course-image.jpg" alt="Course Image" class="course-image">
-            <div class="course-details">
-                <h2>Название курса</h2>
-                <p>Краткое описание курса. Здесь можно указать основные моменты и цели обучения.</p>
-                <button class="add-button">Добавить</button>
+        @foreach(var course in courseMockRepository.Courses)
+        {
+            <div class="course-item">
+                <img src="@course.ImgPath" alt="Course Image" class="course-image">
+                <div class="course-details">
+                    <h2>@course.Title</h2>
+                    <p>@course.Description</p>
+                    <button class="add-button">Добавить</button>
+                </div>
             </div>
-        </div>
-        <div class="course-item">
-            <img src="course-image2.jpg" alt="Course Image" class="course-image">
-            <div class="course-details">
-                <h2>Название курса 2</h2>
-                <p>Краткое описание курса. Здесь можно указать основные моменты и цели обучения.</p>
-                <button class="add-button">Добавить</button>
-            </div>
-        </div>
-        <div class="course-item">
-            <img src="course-image2.jpg" alt="Course Image" class="course-image">
-            <div class="course-details">
-                <h2>Название курса 2</h2>
-                <p>Краткое описание курса. Здесь можно указать основные моменты и цели обучения.</p>
-                <button class="add-button">Добавить</button>
-            </div>
-        </div>
-        <div class="course-item">
-            <img src="course-image2.jpg" alt="Course Image" class="course-image">
-            <div class="course-details">
-                <h2>Название курса 2</h2>
-                <p>Краткое описание курса. Здесь можно указать основные моменты и цели обучения.</p>
-                <button class="add-button">Добавить</button>
-            </div>
-        </div>
-        <div class="course-item">
-            <img src="course-image2.jpg" alt="Course Image" class="course-image">
-            <div class="course-details">
-                <h2>Название курса 2</h2>
-                <p>Краткое описание курса. Здесь можно указать основные моменты и цели обучения.</p>
-                <button class="add-button">Добавить</button>
-            </div>
-        </div>
+        }
     </div>
 </body>
 </html>
