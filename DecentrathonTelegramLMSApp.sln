@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecentrathonTelegramLMSApp.
 		{EB152415-1377-4688-A7B1-F5AC04B739BD} = {EB152415-1377-4688-A7B1-F5AC04B739BD}
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{611EF66B-7445-4343-8E28-E27B3C1F9F50}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{C9B8ED53-21A8-4F3A-AAC8-F0C72FB33DB5}"
 	ProjectSection(SolutionItems) = preProject
-		Index.html = Index.html
+		index.html = index.html
 	EndProjectSection
 EndProject
 Global
