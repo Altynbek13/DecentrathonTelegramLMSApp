@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecentrathonTelegramLMSApp", "DecentrathonTelegramLMSApp\DecentrathonTelegramLMSApp.csproj", "{BCB1E627-E163-4A6A-98C2-243511BA69B8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7B9C321E-109F-4F36-8D7D-62F4388B956E} = {7B9C321E-109F-4F36-8D7D-62F4388B956E}
-		{EB152415-1377-4688-A7B1-F5AC04B739BD} = {EB152415-1377-4688-A7B1-F5AC04B739BD}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{7B9C321E-109F-4F36-8D7D-62F4388B956E}"
@@ -21,16 +15,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\
 		{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7} = {2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecentrathonTelegramLMSApp.MVC", "DecentrathonTelegramLMSApp.MVC\DecentrathonTelegramLMSApp.MVC.csproj", "{90DBB5A8-953C-4800-ACD6-D31C13FC688D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B9C321E-109F-4F36-8D7D-62F4388B956E} = {7B9C321E-109F-4F36-8D7D-62F4388B956E}
+		{EB152415-1377-4688-A7B1-F5AC04B739BD} = {EB152415-1377-4688-A7B1-F5AC04B739BD}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BCB1E627-E163-4A6A-98C2-243511BA69B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCB1E627-E163-4A6A-98C2-243511BA69B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCB1E627-E163-4A6A-98C2-243511BA69B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCB1E627-E163-4A6A-98C2-243511BA69B8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1B4BB3-FC61-4576-A503-3E2DE7EDDCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +39,10 @@ Global
 		{EB152415-1377-4688-A7B1-F5AC04B739BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB152415-1377-4688-A7B1-F5AC04B739BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB152415-1377-4688-A7B1-F5AC04B739BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90DBB5A8-953C-4800-ACD6-D31C13FC688D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DBB5A8-953C-4800-ACD6-D31C13FC688D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DBB5A8-953C-4800-ACD6-D31C13FC688D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DBB5A8-953C-4800-ACD6-D31C13FC688D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
