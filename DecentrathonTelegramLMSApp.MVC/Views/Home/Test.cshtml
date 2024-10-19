@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="~/css/test.css">
+</head>
+<body>
+    <div class="test-container">
+        <h2>Тест: Основы программирования</h2>
+
+        <!-- Вопросы теста -->
+        <div class="question">
+            <h3>Вопрос 1: Что такое переменная?</h3>
+            <form>
+                <label>
+                    <input type="radio" name="q1" value="a"> Это постоянное значение
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="b"> Это контейнер для хранения данных
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="c"> Это функция, выполняющая код
+                </label><br>
+            </form>
+        </div>
+
+        <div class="question">
+            <h3>Вопрос 2: Какой тип данных используется для хранения текста?</h3>
+            <form>
+                <label>
+                    <input type="radio" name="q2" value="a"> int
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="b"> boolean
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="c"> string
+                </label><br>
+            </form>
+        </div>
+
+        <div class="question">
+            <h3>Вопрос 3: Какой оператор используется для сравнения значений?</h3>
+            <form>
+                <label>
+                    <input type="radio" name="q3" value="a"> =
+                </label><br>
+                <label>
+                    <input type="radio" name="q3" value="b"> ==
+                </label><br>
+                <label>
+                    <input type="radio" name="q3" value="c"> !=
+                </label><br>
+            </form>
+        </div>
+
+        <button class="submit-button" onclick="submitTest()">Отправить тест</button>
+    </div>
+
+    <!-- Модальное окно с результатом -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3>Результаты теста</h3>
+            <p id="testResult">Ваш результат: 0 из 3 правильных ответов.</p>
+        </div>
+    </div>
+
+    <script>
+        function submitTest() {
+            let score = 0;
+            // Проверка ответов
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b'
+            };
+
+            for (const [question, correctAnswer] of Object.entries(answers)) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswer) {
+                    score++;
+                }
+            }
+
+            // Показать результат
+            document.getElementById('testResult').textContent = `Ваш результат: ${score} из 3 правильных ответов.`;
+            openModal();
+        }
+
+        function openModal() {
+            document.getElementById('resultModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('resultModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

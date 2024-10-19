@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Page</title>
+    <link rel="stylesheet" href="~/css/course.css">
+</head>
+<body>
+    <div class="module-container">
+        <!-- Этап 1: Видео и Лекция -->
+            <div class="video-container">
+                <video controls>
+                    <source src="course-video.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <div class="lecture-description">
+                <h2>Лекция: Основы программирования</h2>
+                <p>
+                    В этой лекции вы узнаете об основах программирования, таких как переменные, циклы и условия. Мы подробно рассмотрим, как использовать эти элементы для создания простых программ и эффективного решения задач.
+                </p>
+            </div>
+        <div class="navigation-buttons">
+            <button class="nav-buttons" onclick="prevStage()">Назад</button>
+            <button class="nav-buttons" onclick="nextStage()">Вперед</button>
+        </div>
+
+        <div class="course-content">
+            <button class="content-toggle" onclick="toggleContent()">Содержание курса</button>
+            <div class="content-list" id="content-list" style="display: none;">
+                <ul>
+                   <a asp-controller="Home" asp-action="Course"><li>Этап 1: Видео и Лекция </li></a>
+                    <a asp-controller="Home" asp-action="Test"><li onclick="goToStage(2)">Этап 2: Тест</li></a>
+                    <a asp-controller="Home" asp-action="Quiz"><li onclick="goToStage(3)">Этап 3: Квиз</li></a>
+                    <a asp-controller="Home" asp-action="Quest"><li onclick="goToStage(4)">Этап 4: Квест</li></a>
+                    <a asp-controller="Home" asp-action="Result"><li onclick="goToStage(5)">Этап 5: Результат</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStage = 1;
+
+        function showStage(stage) {
+            const stages = document.querySelectorAll('.stage');
+            stages.forEach((s, index) => {
+                s.style.display = (index + 1 === stage) ? 'block' : 'none';
+            });
+        }
+
+        function nextStage() {
+            if (currentStage < 5) {
+                currentStage++;
+                showStage(currentStage);
+            }
+        }
+
+        function prevStage() {
+            if (currentStage > 1) {
+                currentStage--;
+                showStage(currentStage);
+            }
+        }
+
+        function goToStage(stage) {
+            currentStage = stage;
+            showStage(currentStage);
+            toggleContent(); // Закрыть содержание после выбора
+        }
+
+        function toggleContent() {
+            const contentList = document.getElementById('content-list');
+            contentList.style.display = contentList.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Инициализация: показать первый этап
+        showStage(currentStage);
+    </script>
+</body>
+</html>

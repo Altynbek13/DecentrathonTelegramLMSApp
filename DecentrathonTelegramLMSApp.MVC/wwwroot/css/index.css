@@ -82,8 +82,15 @@ h1 {
     width: 100%;
     display: block;
     text-align: center;
+    color: white;
+}
+.learn-button:hover{
+    color: white;
 }
 
     .learn-button:hover {
         background-color: #FFC300;
     }
+a{
+    text-decoration: none;
+}
