@@ -1,0 +1,87 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.profile-info h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #FFD700;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin: 5px 0 0 0;
+    color: #cccccc;
+}
+
+h2 {
+    font-size: 20px;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.course-item {
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+    .course-item h3 {
+        font-size: 18px;
+        color: #ffffff;
+        margin: 0 0 5px 0;
+    }
+
+    .course-item p {
+        font-size: 14px;
+        color: #cccccc;
+        margin: 0;
+    }
+
+.progress-container {
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    background-color: #FFD700;
+    height: 100%;
+}

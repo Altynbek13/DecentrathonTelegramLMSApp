@@ -1,0 +1,70 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Черный фон */
+    color: #ffffff; /* Белый цвет текста */
+}
+
+.courses-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #1a1a1a; /* Темный фон для контейнера */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #FFD700; /* Белый цвет текста */
+    margin-bottom: 20px;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333333; /* Темная граница */
+    padding: 10px 0;
+}
+
+.course-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.course-details {
+    flex: 1;
+}
+
+    .course-details h2 {
+        font-size: 18px;
+        color: #ffffff; /* Белый цвет текста */
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .course-details p {
+        font-size: 14px;
+        color: #cccccc; /* Светло-серый цвет текста для описания */
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+.add-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #ffffff; /* Белый цвет текста на кнопке */
+    background-color: #FFD700; /* Золотой цвет кнопки */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .add-button:hover {
+        background-color: #e6c200; /* Темнее при наведении */
+    }

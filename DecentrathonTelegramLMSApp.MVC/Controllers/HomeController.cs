@@ -17,7 +17,18 @@ namespace DecentrathonTelegramLMSApp.MVC.Controllers
         {
             return View();
         }
-
+        public IActionResult Lider()
+        {
+            return View();
+        }
+        public IActionResult Courses()
+        {
+            return View();
+        }
+        public IActionResult Profile()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
