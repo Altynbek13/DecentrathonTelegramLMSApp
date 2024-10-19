@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True/False Quiz</title>
+    <link rel="stylesheet" href="~/css/quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Квиз: Основы программирования (True/False)</h2>
+
+        <!-- Вопрос 1 -->
+        <div class="quiz-question" id="question-1">
+            <h3>Вопрос 1: Переменная может хранить только одно значение.</h3>
+            <form>
+                <label>
+                    <input type="radio" name="q1" value="true"> True
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="false"> False
+                </label><br>
+            </form>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="quiz-question" id="question-2">
+            <h3>Вопрос 2: Оператор "==" используется для присваивания значений.</h3>
+            <form>
+                <label>
+                    <input type="radio" name="q2" value="true"> True
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="false"> False
+                </label><br>
+            </form>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="quiz-question" id="question-3">
+            <h3>Вопрос 3: Тип данных "string" используется для хранения текстовых значений.</h3>
+            <form>
+                <label>
+                    <input type="radio" name="q3" value="true"> True
+                </label><br>
+                <label>
+                    <input type="radio" name="q3" value="false"> False
+                </label><br>
+            </form>
+        </div>
+
+        <button class="submit-button" onclick="submitQuiz()">Отправить квиз</button>
+    </div>
+
+    <!-- Модальное окно с результатом -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3>Результаты квиза</h3>
+            <p id="quizResult">Ваш результат: 0 из 3 правильных ответов.</p>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            // Правильные ответы
+            const answers = {
+                q1: 'false',
+                q2: 'false',
+                q3: 'true'
+            };
+
+            for (const [question, correctAnswer] of Object.entries(answers)) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswer) {
+                    score++;
+                }
+            }
+
+            // Показать результат
+            document.getElementById('quizResult').textContent = `Ваш результат: ${score} из 3 правильных ответов.`;
+            openModal();
+        }
+
+        function openModal() {
+            document.getElementById('resultModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('resultModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

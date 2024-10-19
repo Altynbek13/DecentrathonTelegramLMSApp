@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Page</title>
+    <link rel="stylesheet" href="~/css/quest.css">
+</head>
+<body>
+    <div class="quest-container">
+        <h2>Квест: Найдите решение задачи</h2>
+
+        <div class="quest-description">
+            <p>
+                Ваша задача — найти и загрузить файл с правильным решением задачи, описанной ниже. Если у вас есть ответ, введите его в поле ввода или загрузите файл. После этого нажмите кнопку "Отправить", чтобы завершить квест.
+            </p>
+            <h3>Задание:</h3>
+            <p>
+                Разработайте программу, которая определяет, является ли число простым. Программа должна быть написана на Python и загружена в виде файла с расширением ".py".
+            </p>
+        </div>
+
+        <form id="questForm">
+            <div class="input-container">
+                <label for="answer">Введите ваш ответ:</label><br>
+                <input type="text" id="answer" name="answer" placeholder="Введите ваш ответ" class="quest-input"><br><br>
+
+                <label for="fileUpload">Или загрузите файл с решением:</label><br>
+                <input type="file" id="fileUpload" name="fileUpload" class="quest-input"><br><br>
+            </div>
+
+            <button type="button" class="submit-button" onclick="submitQuest()">Отправить квест</button>
+        </form>
+    </div>
+
+    <!-- Модальное окно с подтверждением -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3>Квест завершен</h3>
+            <p>Ваше решение успешно отправлено. Спасибо за участие!</p>
+        </div>
+    </div>
+
+    <script>
+        function submitQuest() {
+            // Логика проверки ответа или файла
+            const answer = document.getElementById('answer').value;
+            const file = document.getElementById('fileUpload').files[0];
+
+            if (answer || file) {
+                openModal();
+            } else {
+                alert("Пожалуйста, введите ответ или загрузите файл.");
+            }
+        }
+
+        function openModal() {
+            document.getElementById('confirmationModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

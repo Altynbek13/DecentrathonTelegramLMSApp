@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments List</title>
+    <link rel="stylesheet" href="~/css/tasks.css">
+</head>
+<body>
+    <div class="assignments-container">
+        <h2>Список заданий</h2>
+        <ul class="assignments-list">
+            <li onclick="navigateToTask(1)">
+                <span class="assignment-name">Задание 1: Основы программирования</span>
+                <span class="points">10 баллов</span>
+            </li>
+            <li onclick="navigateToTask(2)">
+                <span class="assignment-name">Задание 2: Переменные и типы данных</span>
+                <span class="points">15 баллов</span>
+            </li>
+            <li onclick="navigateToTask(3)">
+                <span class="assignment-name">Задание 3: Управляющие конструкции</span>
+                <span class="points">20 баллов</span>
+            </li>
+            <li onclick="navigateToTask(4)">
+                <span class="assignment-name">Задание 4: Функции и процедуры</span>
+                <span class="points">25 баллов</span>
+            </li>
+            <li onclick="navigateToTask(5)">
+                <span class="assignment-name">Задание 5: Массивы и коллекции</span>
+                <span class="points">30 баллов</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function navigateToTask(taskNumber) {
+            // Логика для перехода к выполнению задания
+            alert("Переход к заданию " + taskNumber);
+            // Здесь можно сделать редирект на другую страницу или открыть задание на текущей
+        }
+    </script>
+</body>
+</html>

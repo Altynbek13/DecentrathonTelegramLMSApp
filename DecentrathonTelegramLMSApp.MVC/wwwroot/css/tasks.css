@@ -1,0 +1,56 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.assignments-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.assignments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .assignments-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: #333;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 18px;
+        color: #FFD700;
+    }
+
+        .assignments-list li:hover {
+            background-color: #444;
+        }
+
+.assignment-name {
+    flex: 1;
+}
+
+.points {
+    font-size: 16px;
+    color: #ffffff;
+    margin-left: 15px;
+}
